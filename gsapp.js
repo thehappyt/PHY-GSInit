@@ -13,6 +13,8 @@
             this.scene.height=high
             this.scene.title.text(ttl);
             this.scene.caption.text(cptn);
+            this.scene.menubar = $("<div/>").css("white-space","pre").insertBefore(this.scene.wrapper)
+            this.scene.iconbar = $("<div/>").css("white-space","pre").insertBefore(this.scene.wrapper)
             this.scene.wrapper.css({margin: '4px'})
             $(this.scene.__canvas_element).css({border: '1px solid #AAA'})
             $(this.scene.__overlay_element).css({border: '1px solid #AAA'})
