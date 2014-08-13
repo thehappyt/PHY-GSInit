@@ -41,6 +41,14 @@
     }
     GSapp.prototype.constructor = GSapp
 
+    var global = window
+    function Export( exports ) {
+        for(var id in exports) {
+            glowscript[id] = exports[id]
+            global[id] = exports[id]
+        }
+    }
+
     var exports = { GSapp: GSapp }
     Export(exports)
 })()
