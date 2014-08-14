@@ -43,6 +43,7 @@
 
     var global = window
     function Export( exports ) {
+        if (!global.gsapp) global.gsapp = {}
         for(var id in exports) {
             global[id] = exports[id]
             gsapp[id] = exports[id]
