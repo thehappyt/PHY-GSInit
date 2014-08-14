@@ -1,4 +1,4 @@
 PHY-GSInit
 ==========
 
-Initialization scripts used for Glowscript in Physics Courses.
+Initialization scripts for Glowscript Application framework.
