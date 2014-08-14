@@ -44,7 +44,6 @@
     var global = window
     function Export( exports ) {
         for(var id in exports) {
-            glowscript[id] = exports[id]
             global[id] = exports[id]
         }
     }
