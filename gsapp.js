@@ -46,6 +46,7 @@
     function Export( exports ) {
         for(var id in exports) {
             global[id] = exports[id]
+            gsapp[id] = exports[id]
         }
     }
 
