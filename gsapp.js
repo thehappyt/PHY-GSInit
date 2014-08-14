@@ -51,4 +51,4 @@
 
     var exports = { GSapp: GSapp }
     Export(exports)
-})()
+}) ();
