@@ -1,4 +1,4 @@
 PHY-GSInit
 ==========
 
-Initialization scripts for Glowscript Application framework.
+Initialization scripts for GlowScript Application framework.
