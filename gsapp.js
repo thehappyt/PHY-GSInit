@@ -4,8 +4,7 @@
     function GSapp(options) {
         if (!(this instanceof GSapp)) return new GSapp(options);
         options = options || {}
-        if (window.improvedCanvas) this.scene = improvedCanvas({ resizable:false })
-        else this.scene = canvas({ resizable:false })
+        this.scene = canvas({ resizable:false })
         this.appst = function(ttl, cptn) {       // SETUP APPLICATION STRUCTURE
             var high = Number(window.innerHeight) - 78              // 36 for status bar, 21 for title, 24 for menubar, 21 for iconbar
             var wide = Number(window.innerWidth) - 20               // 20 for good measure
