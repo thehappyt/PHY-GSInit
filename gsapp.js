@@ -11,17 +11,14 @@
 
             this.scene.width=high
             this.scene.height=high
+            if (!this.scene.__activated) sphere({ canvas: this.scene, visible: false })
             this.scene.title.text(ttl);
             this.scene.caption.text(cptn);
-            console.log("Got here!")
             this.scene.menubar = $("<div/>").css("white-space","pre").insertBefore(this.scene.wrapper)
-            console.log("Got here!")
             this.scene.iconbar = $("<div/>").css("white-space","pre").insertBefore(this.scene.wrapper)
-            console.log("Got here!")
             this.scene.wrapper.css({margin: '4px'})
             $(this.scene.__canvas_element).css({border: '1px solid #AAA'})
             $(this.scene.__overlay_element).css({border: '1px solid #AAA'})
-            if(!this.scene.__activated) sphere({ canvas: this.scene, visible: false })
             
             print('', {end:''})
             print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6, position:"right"})
