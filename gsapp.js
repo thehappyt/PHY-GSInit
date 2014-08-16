@@ -1,6 +1,9 @@
 ;(function () {
     "use strict";
     
+    console.log("Started GSApp:",Date.now());
+
+    
     function GSapp(options) {
         if (!(this instanceof GSapp)) return new GSapp(options);
         options = options || {}
@@ -52,4 +55,7 @@
 
     var exports = { GSapp: GSapp }
     Export(exports)
+    
+    console.log("Ended GSApp:",Date.now());
+
 }) ();
