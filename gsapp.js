@@ -31,7 +31,7 @@
         
         this.iconitem = function(ii) { if (ii instanceof jQuery && ii.is("button")) this.canvas.iconbar.append(ii); }
         
-        $.ajax({ url:"./gsapp.css", dataType:"script",
+        $.ajax({ url:"https://raw.githack.com/thehappyt/PHY-GSInit/master/gsapp.css", dataType:"script",
             success:function(data){
                 $("head").append("<style>" + data + "</style>");
                 console.log("Styleshhet finished loading!");
