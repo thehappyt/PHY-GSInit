@@ -31,6 +31,13 @@
         
         this.iconitem = function(ii) { if (ii instanceof jQuery && ii.is("button")) this.canvas.iconbar.append(ii); }
         
+        $.ajax({ url:"./gsapp.css", dataType:"script",
+            success:function(data){
+                $("head").append("<style>" + data + "</style>");
+                console.log("Styleshhet finished loading!");
+            }
+        });
+
         if (!options.title) options.title = '';
         if (!options.caption) options.caption = '';
         this.appst(options.title, options.caption);
