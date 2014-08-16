@@ -1,0 +1,85 @@
+.glowscript-canvas-wrapper.ui-state-disabled {
+  opacity: 1;
+  filter:Alpha(Opacity=100);
+}
+
+.ui-menu {
+	display: none;
+}
+.ui-menu-item {
+  background-color: #BBB;
+}
+
+.gsmenubar,
+.gsmenubar ul,
+.gsmenubar li,
+.gsmenubar a {
+  margin: 0 0;
+  padding: 0 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  font-weight: normal;
+}
+.gsmenubar {
+  background-color: #BBB;
+  position: relative;
+  text-align: left;
+  /*display: inline-block;*/
+  /*float: left*/
+}
+.gsmenubar > ul > li {
+  /*float: left;*/
+  display: inline-block;
+  border: 1px solid #777;
+}
+.gsmenubar a,visited {
+  display: block;
+  padding: 2px 10px;
+  text-decoration: none;
+}
+.gsmenubar > ul > li:hover {
+  background-color: #DDD;
+}
+.gsmenubar > ul > li:hover > .ui-menu {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  /*bottom: 0%;*/
+  /*border-bottom: 1px solid transparent;*/
+}
+
+.gsiconbar {
+  margin: 1px 4px;
+  padding: 0 0 1px 1px;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #AAA;
+  display: block;
+}
+.gsiconbar > button {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #36A;
+}
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.gsapp-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+.gsapp-icon { width: 16px; height: 16px; background-image: url(images/gsapp.png)/*{iconsContent}*/; }
+
+/* positioning */
+.gsapp-icon-show-grid { background-position: 0px 0px; }
+.gsapp-icon-snap-to-grid { background-position: -16px 0px; }
+.gsapp-icon-efield-show { background-position: 0px -16px; }
+.gsapp-icon-efield-varsize { background-position: -16px -16px; }
+.gsapp-icon-efield-samesize { background-position: -32px -16px; }
+/*.gsapp-icon-show-vsurface { background-position: -48px 0; }*/
+.gsapp-icon-pointcharge { background-position: 0px -32px; }
+.gsapp-icon-linecharge { background-position: -16px -32px; }
+.gsapp-icon-clear-charges { background-position: -32px -32px; }
