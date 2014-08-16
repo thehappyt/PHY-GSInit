@@ -71,7 +71,7 @@
 
 /* states and images */
 .gsapp-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
-.gsapp-icon { width: 16px; height: 16px; background-image: url(images/gsapp.png)/*{iconsContent}*/; }
+.gsapp-icon { width: 16px; height: 16px; background-image: url(../css/gsapp-icons.png)/*{iconsContent}*/; }
 
 /* positioning */
 .gsapp-icon-show-grid { background-position: 0px 0px; }
