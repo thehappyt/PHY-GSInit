@@ -67,7 +67,7 @@
 ----------------------------------*/
 
 /* states and images */
-.gsapp-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+.gsapp-icon { display: block; /*text-indent: -99999px;*/ overflow: hidden; background-repeat: no-repeat; }
 /*.gsapp-icon { width: 16px; height: 16px; background-image: url(../css/gsapp-icons.png); } */
 .gsapp-icon { width: 16px; height: 16px; }
 
