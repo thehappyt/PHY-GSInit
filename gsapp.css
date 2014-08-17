@@ -55,7 +55,7 @@
   text-decoration: none;
   position: relative;
   border: 1px solid #AAA;
-  display: block;
+  display: inline-block;
 }
 .gsiconbar > button {
   width: 20px;
