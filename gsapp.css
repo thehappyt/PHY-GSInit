@@ -1,3 +1,4 @@
+/*
 .glowscript-canvas-wrapper.ui-state-disabled {
   opacity: 1;
   filter:Alpha(Opacity=100);
@@ -27,11 +28,8 @@
   background-color: #BBB;
   position: relative;
   text-align: left;
-  /*display: inline-block;*/
-  /*float: left*/
 }
 .gsmenubar > ul > li {
-  /*float: left;*/
   display: inline-block;
   border: 1px solid #777;
 }
@@ -47,9 +45,8 @@
   position: absolute;
   z-index: 1;
   display: block;
-  /*bottom: 0%;*/
-  /*border-bottom: 1px solid transparent;*/
 }
+*/
 
 .gsiconbar {
   margin: 1px 4px;
