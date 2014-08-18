@@ -32,7 +32,8 @@
         // Syntax: (GSAppobj).iconitem({title, iconclasses, text}, cb)
         this.iconitem = function(opt) {
             var b = $('<button>'), text=opt.text||false;
-            //b = $('<button' opt.title?(' title="' + opt.title + '"'):('>') + text?(opt.text+''):('')+'</button>')
+            if (opt.title) { opt.title = opt.title + ''; b.attr({ title: opt.title }); }
+            //if (opt.text) { opt.text = opt.text + ''; b.text( opt.text ); }
             b.button({ icons: { primary: opt.iconclasses + "" }, text: text })
             b.click( function() { $(this).blur(); });
             this.canvas.iconbar.append(b);
