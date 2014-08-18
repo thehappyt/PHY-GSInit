@@ -29,14 +29,16 @@
         
         this.menuitem = function(mi) { if (mi instanceof jQuery && (mi.is("li") || mi.is("ul"))) this.canvas.menubar.append(mi.gsmenubar()); }
         
-        this.iconitem = function(ii,cb) { if (ii instanceof jQuery && ii.is("button")) {
-            this.canvas.iconbar.append(ii);
-            ii.click( function() {
-                $(this).blur();
-                //alert("Clicked!")
-            });
-            if(cb) cb();
-        }}
+        this.iconitem = function(opt,cb) {
+            var b, text=opt.text||false;
+            b = $('<button' opt.title?(' title="' + opt.title + '"'):('>') + text?(opt.text+''):('')+'</button>')
+            b.button({ icons: { primary: opt.iconclasses + "" }, text: text })
+            if (opt.checked) b.click( function() { $(this).toggleClass("gsicon-checked",!!opt.checked ); $(this).blur(); })
+            else b.click( function() { $(this).blur(); });
+            this.canvas.iconbar.append(b);
+            if (cb && (Object.prototype.toString.call(cb) == '[object Function]')) cb();
+        }
+iconitem({title, iconclasses, text, checked}, cb)
 
         var myStylesLocation = "https://raw.githack.com/thehappyt/PHY-GSInit/master/gsapp.css";
         $('<link rel="stylesheet" type="text/css" href="'+myStylesLocation+'" >') .appendTo("head");
