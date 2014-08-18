@@ -31,7 +31,7 @@
         
         // Syntax: (GSAppobj).iconitem({title, iconclasses, text, checked}, cb)
         this.iconitem = function(opt,cb) {
-            var b, text=opt.text||false;
+            var b = $('<button>'), text=opt.text||false;
             //b = $('<button' opt.title?(' title="' + opt.title + '"'):('>') + text?(opt.text+''):('')+'</button>')
             b.button({ icons: { primary: opt.iconclasses + "" }, text: text })
             //if (opt.checked) b.click( function() { $(this).toggleClass("gsicon-checked",!!opt.checked ); $(this).blur(); })
