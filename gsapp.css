@@ -64,6 +64,10 @@
   border: 1px solid #36A;
 }
 
+.gsiconbar > button.gsicon-checked {
+  background-color: #FFF;
+}
+
 /* Icons
 ----------------------------------*/
 
