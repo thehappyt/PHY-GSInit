@@ -57,6 +57,7 @@
   border: 1px solid #AAA;
   display: block;
 }
+.gsiconbar > input,
 .gsiconbar > button {
   width: 20px;
   height: 20px;
