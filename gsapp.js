@@ -34,8 +34,8 @@
             var b = $('<button>'), text=opt.text||false;
             //b = $('<button' opt.title?(' title="' + opt.title + '"'):('>') + text?(opt.text+''):('')+'</button>')
             b.button({ icons: { primary: opt.iconclasses + "" }, text: text })
-            //if (opt.checked) b.click( function() { $(this).toggleClass("gsicon-checked",!!opt.checked ); $(this).blur(); })
-            //else b.click( function() { $(this).blur(); });
+            if (opt.checked) b.click( function() { $(this).toggleClass("gsicon-checked",!!opt.checked ); $(this).blur(); })
+            else b.click( function() { $(this).blur(); });
             this.canvas.iconbar.append(b);
             //if (cb && (Object.prototype.toString.call(cb) == '[object Function]')) cb();
         }
