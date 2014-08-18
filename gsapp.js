@@ -36,7 +36,8 @@
             b.button({ icons: { primary: opt.iconclasses + "" }, text: text })
             b.click( function() { $(this).blur(); });
             this.canvas.iconbar.append(b);
-            if (cb && (Object.prototype.toString.call(cb) == '[object Function]')) cb();
+            console.log(Object.prototype.toString.call(cb))
+            //if (cb && (Object.prototype.toString.call(cb) == '[object Function]')) cb();
         }
 
         var myStylesLocation = "https://raw.githack.com/thehappyt/PHY-GSInit/master/gsapp.css";
