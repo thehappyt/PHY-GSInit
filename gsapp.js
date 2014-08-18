@@ -37,7 +37,6 @@
             b.click( function() { $(this).blur(); });
             this.canvas.iconbar.append(b);
             console.log(Object.prototype.toString.call(cb))
-            //if (cb && (Object.prototype.toString.call(cb) == '[object Function]')) cb();
         }
 
         var myStylesLocation = "https://raw.githack.com/thehappyt/PHY-GSInit/master/gsapp.css";
