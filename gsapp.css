@@ -80,9 +80,9 @@
 
 /* positioning */
 .gsapp-icon-show-grid { background-position: 0px 0px; }
-.gsapp-icon-show-efield { background-position: 0px -16px; }
-.gsapp-icon-show-vsurface { background-position: 0px -32px; }
 .gsapp-icon-snap-to-grid { background-position: -16px 0px; }
+.gsapp-icon-show-vsurface { background-position: -32px 0px; }
+.gsapp-icon-show-efield { background-position: 0px -16px; }
 .gsapp-icon-efield-varysize { background-position: -16px -16px; }
 .gsapp-icon-efield-samesize { background-position: -32px -16px; }
 .gsapp-icon-pointcharge { background-position: 0px -32px; }
