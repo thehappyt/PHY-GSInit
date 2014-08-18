@@ -30,13 +30,12 @@
         this.menuitem = function(mi) { if (mi instanceof jQuery && (mi.is("li") || mi.is("ul"))) this.canvas.menubar.append(mi.gsmenubar()); }
         
         // Syntax: (GSAppobj).iconitem({title, iconclasses, text}, cb)
-        this.iconitem = function(opt,cb) {
+        this.iconitem = function(opt) {
             var b = $('<button>'), text=opt.text||false;
             //b = $('<button' opt.title?(' title="' + opt.title + '"'):('>') + text?(opt.text+''):('')+'</button>')
             b.button({ icons: { primary: opt.iconclasses + "" }, text: text })
             b.click( function() { $(this).blur(); });
             this.canvas.iconbar.append(b);
-            console.log(Object.prototype.toString.call(cb))
         }
 
         var myStylesLocation = "https://raw.githack.com/thehappyt/PHY-GSInit/master/gsapp.css";
