@@ -29,14 +29,11 @@
         
         this.menuitem = function(mi) { if (mi instanceof jQuery && (mi.is("li") || mi.is("ul"))) this.canvas.menubar.append(mi.gsmenubar()); }
         
-        this.iconitem = function(ii,cb) {
-            if (ii instanceof jQuery && (ii.is("button") || ii.is("input"))) {
-                this.canvas.iconbar.append(ii);
-                //ii.click( $(this).blur(); );
-                if(cb) cb();
-            }
-            
-        }
+        this.iconitem = function(ii,cb) { if (ii instanceof jQuery && ii.is("button")) {
+            this.canvas.iconbar.append(ii);
+            ii.click( /*$(this).blur();*/ alert("Clicked!") );
+            if(cb) cb();
+        }}
 
         var myStylesLocation = "https://raw.githack.com/thehappyt/PHY-GSInit/master/gsapp.css";
         $('<link rel="stylesheet" type="text/css" href="'+myStylesLocation+'" >') .appendTo("head");
