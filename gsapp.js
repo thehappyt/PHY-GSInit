@@ -32,8 +32,8 @@
         this.iconitem = function(ii,cb) { if (ii instanceof jQuery && ii.is("button")) {
             this.canvas.iconbar.append(ii);
             ii.click( function() {
-                //$(this).blur();
-                alert("Clicked!")
+                $(this).blur();
+                //alert("Clicked!")
             });
             if(cb) cb();
         }}
