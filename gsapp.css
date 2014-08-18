@@ -79,12 +79,12 @@
 
 
 /* positioning */
-.gsapp-icon-show-grid { background-position: 0px 0px; /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94IEAsBOlfLzLMAAAAjSURBVDjLY2CgCvjP8B+FJkUMQ5IcMeq4YGDBaCCOBuJAAwAQqlmnNVkWtwAAAABJRU5ErkJggg==);*/ }
-.gsapp-icon-snap-to-grid { background-position: -16px 0px; /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94IEAsCLIgyKiEAAABNSURBVDjLY2CgCvjP8B+FJkUMQ5IcMUpcwIjXYwjASHqo4Ofj9cJ/HM79T2wg/scRYP+JDUQyXUBmGFAcC0x44hyi8T+B9DLgKXHgAQCw3GOkAI7WlAAAAABJRU5ErkJggg==);*/ }
-.gsapp-icon-efield-show { background-position: 0px -16px; /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94IEAsEDZIBnfkAAABQSURBVDjL3ZE5CgAgDARH//+rfVgsRPBoElQQUy1TLMkEDo0BhsVZbkESpLHVy+ga4+mZ+UyibbAdgeuKHlYlSqowTbIcrL9mfJmX3RAYKikOZFBlf72rPAAAAABJRU5ErkJggg==);*/ }
-.gsapp-icon-efield-varysize { /*background-position: -16px -16px;*/ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94IEAsFHOGqjEoAAABuSURBVDjLrZJBDsAgCASH/v9XPGx7qIka0VCVExlxFwhwKR7AUMcMIGA2UAB3T7HyWb2IJmXjqwC5eyASx6xQ7eyxb8mbMc7dVh2EbvnF6iD7025miZsXWHVtR+BbjDqpylizfiIlWeImMjdzJ16bHUa+TKHS7wAAAABJRU5ErkJggg==);}
-.gsapp-icon-efield-samesize { /*background-position: -32px -16px;*/ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94IEAsGJgyLBjsAAABMSURBVDjL3ZBdCgAgDIKti3s4D1avg37HiiCfxocMFTis4mVpYEy7LFsoCQBAspBcsl46d4UcHe3uA9N1ymxL//XJiJKaoLvs/YhhVXyQPCti2OarAAAAAElFTkSuQmCC);}
-/*.gsapp-icon-show-vsurface { background-position: -48px 0; }*/
-.gsapp-icon-pointcharge { /*background-position: 0px -32px; */ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAXEgAAFxIBZ5/SUgAAAAd0SU1FB94IDxcbDDUaviwAAADjSURBVDjLlZIxigJBEEVfl5MbDp5gor3HBoaLt1BBM+/ggngKxcDAwHsYeYJlQ8FEdOYbiEvb3S7TBQ1Ndb3fRdVntJIkkTqzrfTf+2gl2feX3HiNyIzxGi0GOOuYY54p8oQBDKDIEPHhP4G2IiEM4KTX+roRk43T8Rd+To9crwtVCSEMUISJjjl8GF7vYbjZVlHLu0O6uP8R54rzpf3qUrXRDAA+lyhsu9eF/TCegYWJWyOq8gH4cFW+acu35rVu8K0bWjlla/N/nm6cUqt6xmJA5BNrC78TsToDTonYJBMORe6h6MTWYjhavwAAAABJRU5ErkJggg==);}
-.gsapp-icon-linecharge { /*background-position: -16px -32px; */ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAd0SU1FB94IDxcaK4kLOgYAAAA+SURBVDjLY/j//z/D////GfJW/v9fteH/fxifWDEmBgrBMDCA0X3S//+UGMDy/OOID0QWSX4KTRhNypQbAAD7rmYpCRjuVgAAAABJRU5ErkJggg==); }
-.gsapp-icon-clear-charges { /*background-position: -32px -32px; */ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB94IEAsWBn0nNKIAAADLSURBVDjLpZMxEoMwDATXPEH8IANFejpqv5qaLj0FDD9AXyCFY8zEwkwm6uw56U53NvxZDmDo+h1VEMG/RldqGB7PHRFQxa+TqwBQhU1hXgLgqrnr94hDBIAw4HMAYNMAtJjnJV2ophUOwKYJUAt+ndKK5+a2OVZ1mcQv4LGeMTgbYCo514n5coCpxGCOVZlMaig4G11SYLIXVFTFqGoJRhYidqUEomGliG8BdwT5S2wb023/Gh21ZEanv9A2gbnwmfw6uYi7SuXnegM3tXpDMScUKgAAAABJRU5ErkJggg==);}
+.gsapp-icon-show-grid { background-position: 0px 0px; }
+.gsapp-icon-efield-show { background-position: 0px -16px; }
+.gsapp-icon-show-vsurface { background-position: 0px -32px; }
+.gsapp-icon-snap-to-grid { background-position: -16px 0px; }
+.gsapp-icon-efield-varysize { background-position: -16px -16px; }
+.gsapp-icon-efield-samesize { background-position: -32px -16px; }
+.gsapp-icon-pointcharge { background-position: 0px -32px; }
+.gsapp-icon-linecharge { background-position: -16px -32px; }
+.gsapp-icon-clear-charges { background-position: -32px -32px; }
