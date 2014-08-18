@@ -33,7 +33,7 @@
             if (ii instanceof jQuery && (ii.is("button") || ii.is("input"))) {
                 this.canvas.iconbar.append(ii);
                 ii.click( $(this).blur(); );
-                if(cb) cb();
+                //if(cb) cb();
             }
             
         }
