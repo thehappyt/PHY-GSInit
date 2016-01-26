@@ -6,21 +6,21 @@
         options = options || {}
         if (!options.title) options.title = '';
         if (!options.caption) options.caption = '';
-        if (!options.mbar) options.mbar = false;
-        if (!options.ibar) options.ibar = false;
+        options.mbar = !!options.mbar;
+        options.ibar = !!options.ibar;
 
         this.canvas = canvas({ resizable:false })
-        this.appst = function(ttl, cptn, mbar, ibar) {                                              // SETUP APPLICATION STRUCTURE
-            var high = Number(window.innerHeight) - 57 - 24*(mbar||false) - 21*(ibar||false)        // 36 for status bar, 21 for title
-            var wide = Number(window.innerWidth) - 20                                               // 20 for good measure
+        this.appst = function(ttl, cptn, mbar, ibar) {                              // SETUP APPLICATION STRUCTURE
+            var high = Number(window.innerHeight) - 57 - 24*(mbar) - 21*(ibar)      // 36 for status bar, 21 for title
+            var wide = Number(window.innerWidth) - 20                               // 20 for good measure
 
             this.canvas.width=high
             this.canvas.height=high
             if (!this.canvas.__activated) sphere({ canvas: this.canvas, visible: false })
             this.canvas.title.text(ttl);
             this.canvas.caption.text(cptn);
-            if (mbar): this.canvas.menubar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper);
-            if (ibar): this.canvas.iconbar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper);
+            if (mbar) this.canvas.menubar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper);
+            if (ibar) this.canvas.iconbar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper);
             this.canvas.wrapper.css({margin: '4px'})
             $(this.canvas.__canvas_element).css({border: '1px solid #AAA'})
             $(this.canvas.__overlay_element).css({border: '1px solid #AAA'})
