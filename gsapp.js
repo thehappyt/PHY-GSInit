@@ -28,8 +28,8 @@
             print('', {end:''})
             print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6, position:"right"})
             
-            this.canvas.menubar.addClass("gsmenubar")
-            this.canvas.iconbar.addClass("gsiconbar")
+            if (mbar) this.canvas.menubar.addClass("gsmenubar")
+            if (ibar) this.canvas.iconbar.addClass("gsiconbar")
         }
         
         if (options.mbar) {
