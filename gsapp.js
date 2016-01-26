@@ -26,7 +26,7 @@
             $(this.canvas.__overlay_element).css({border: '1px solid #AAA'})
             
             print('', {end:''})
-            print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6, position:"right"})
+            print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6, pos:"right"})
             
             //if (mbar) this.canvas.menubar.addClass("gsmenubar")
             //if (ibar) this.canvas.iconbar.addClass("gsiconbar")
@@ -38,14 +38,14 @@
         if (options.ibar) {
             // Syntax: (GSAppobj).iconitem({title, iconclasses, text}, cb)
             this.iconitem = function(opt) {
-            var b = $('<button>'), text=opt.text||false;
-            if (opt.title) { opt.title = opt.title + ''; b.attr({ title: opt.title }); }
-            //if (opt.text) { opt.text = opt.text + ''; b.text( opt.text ); } //(NOT WORKING YET  b.css("width", "50px"))
-            b.button({ icons: { primary: "gsapp-icon " + opt.icon }, text: text })
-            b.click( function() { $(this).blur(); });
-            this.canvas.iconbar.append(b);
-            return b;
-        }
+                var b = $('<button>'), text=opt.text||false;
+                if (opt.title) { opt.title = opt.title + ''; b.attr({ title: opt.title }); }
+                //if (opt.text) { opt.text = opt.text + ''; b.text( opt.text ); } //(NOT WORKING YET  b.css("width", "50px"))
+                b.button({ icons: { primary: "gsapp-icon " + opt.icon }, text: text })
+                b.click( function() { $(this).blur(); });
+                this.canvas.iconbar.append(b);
+                return b;
+            }
         }
 
         var myStylesLocation = "https://raw.githack.com/thehappyt/PHY-GSInit/master/gsapp.css";
