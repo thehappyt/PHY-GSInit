@@ -19,8 +19,8 @@
             if (!this.canvas.__activated) sphere({ canvas: this.canvas, visible: false })
             this.canvas.title.text(ttl);
             this.canvas.caption.text(cptn);
-            if (mbar) this.canvas.menubar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper);
-            if (ibar) this.canvas.iconbar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper);
+            if (mbar) this.canvas.menubar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper).addClass("gsmenubar");
+            if (ibar) this.canvas.iconbar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper).addClass("gsiconbar");
             this.canvas.wrapper.css({margin: '4px'})
             $(this.canvas.__canvas_element).css({border: '1px solid #AAA'})
             $(this.canvas.__overlay_element).css({border: '1px solid #AAA'})
@@ -28,8 +28,8 @@
             print('', {end:''})
             print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6, position:"right"})
             
-            if (mbar) this.canvas.menubar.addClass("gsmenubar")
-            if (ibar) this.canvas.iconbar.addClass("gsiconbar")
+            //if (mbar) this.canvas.menubar.addClass("gsmenubar")
+            //if (ibar) this.canvas.iconbar.addClass("gsiconbar")
         }
         
         if (options.mbar) {
