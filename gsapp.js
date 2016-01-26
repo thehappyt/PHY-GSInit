@@ -26,12 +26,7 @@
             $(this.canvas.__overlay_element).css({border: '1px solid #AAA'})
             
             print('', {end:''})
-            console.log("width",Math.max(Math.min(wide - high,400),200));
-            console.log("height",high+48-6);
             print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6, pos:"right"})
-            
-            //if (mbar) this.canvas.menubar.addClass("gsmenubar")
-            //if (ibar) this.canvas.iconbar.addClass("gsiconbar")
         }
         
         if (options.mbar) {
