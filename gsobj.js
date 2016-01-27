@@ -72,7 +72,7 @@
     function Export( exports ) {
         if (!global.gsast) global.gsast = {}
         for(var id in exports) {
-            global[id] = exports[id]
+            if (!global[id]) global[id] = exports[id]
             gsast[id] = exports[id]
         }
     }
