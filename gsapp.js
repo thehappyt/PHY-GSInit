@@ -1,8 +1,8 @@
 ;(function () { 
     "use strict";
     
-    function GSapp(options) {
-        if (!(this instanceof GSapp)) return new GSapp(options);
+    function app(options) {
+        if (!(this instanceof app)) return new app(options);
         options = options || {}
         if (!options.title) options.title = '';
         if (!options.caption) options.caption = '';
@@ -33,12 +33,12 @@
             this.menuitem = function(mi) { if (mi instanceof jQuery && (mi.is("li") || mi.is("ul"))) this.canvas.menubar.append(mi.gsmenubar()); }
         }
         if (options.ibar) {
-            // Syntax: (GSAppobj).iconitem({title, iconclasses, text}, cb)
+            // Syntax: (appobj).iconitem({title, iconclasses, text}, cb)
             this.iconitem = function(opt) {
                 var b = $('<button>'), text=opt.text||false;
                 if (opt.title) { opt.title = opt.title + ''; b.attr({ title: opt.title }); }
                 //if (opt.text) { opt.text = opt.text + ''; b.text( opt.text ); } //(NOT WORKING YET  b.css("width", "50px"))
-                b.button({ icons: { primary: "gsapp-icon " + opt.icon }, text: text })
+                b.button({ icons: { primary: "app-icon " + opt.icon }, text: text })
                 b.click( function() { $(this).blur(); });
                 this.canvas.iconbar.append(b);
                 return b;
@@ -56,7 +56,7 @@
         for (var id in options) this.canvas[id] = options[id];
         
     }
-    GSapp.prototype.constructor = GSapp
+    app.prototype.constructor = app
 
     Object.defineProperty(canvas.prototype, "out",     {configurable: false, enumerable: true,  writable: true,
         value: function()  { return this.forward.multiply(-1).norm();            } })
