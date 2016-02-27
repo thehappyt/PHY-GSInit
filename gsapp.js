@@ -58,6 +58,8 @@
     }
     app.prototype.constructor = app
 
+    Object.defineProperty(canvas.prototype, "d",     {configurable: false, enumerable: true,  writable: true,
+        value: function(N) { return this.range/(N+0.25);            } })
     Object.defineProperty(canvas.prototype, "out",     {configurable: false, enumerable: true,  writable: true,
         value: function()  { return this.forward.multiply(-1).norm();            } })
     Object.defineProperty(canvas.prototype, "right",   {configurable: false, enumerable: true,  writable: true,
