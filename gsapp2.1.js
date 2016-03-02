@@ -17,8 +17,8 @@
             this.canvas.width=high
             this.canvas.height=high
             if (!this.canvas.__activated) sphere({ canvas: this.canvas, visible: false })
-            this.canvas.title.text(ttl);
-            this.canvas.caption.text(cptn);
+            this.canvas.title = ttl;
+            this.canvas.caption = cptn;
             if (mbar) this.canvas.menubar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper).addClass("gsmenubar");
             if (ibar) this.canvas.iconbar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper).addClass("gsiconbar");
             this.canvas.wrapper.css({margin: '4px'})
