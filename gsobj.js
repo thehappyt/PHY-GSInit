@@ -15,6 +15,7 @@
         }
         
         var R = args.radius || 1; delete args.radius;
+        args.pos = args.pos || vec(0,0,0);
         args.normal = vec(1,0,0);
         args.color = args.color || vec(1,1,1);
         args.axis = args.axis || vec(1,0,0);
@@ -65,7 +66,9 @@
         for (var i=0; i<m.index.length; i+=3) {
             t.push( triangle({ v0: v[m.index[i]], v1: v[m.index[i+1]], v2: v[m.index[i+2]] }) );
         }
-        return compound( t, { axis: args.axis, up: args.up } );
+        var circ = compound( t, { axis: args.axis, up: args.up } );
+        circ.pos = args.pos;
+        return circ;
     }
     
     var global = window
