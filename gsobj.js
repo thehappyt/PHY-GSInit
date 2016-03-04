@@ -2,6 +2,7 @@
     "use strict";
 
     function makeCircle() {
+        console.log("Start of makeCircle().")
         var N = 50; //number of triangles for circle
         var dtheta = 2*pi/N;
         var sind = sin(dtheta), cosd = cos(dtheta);
@@ -20,10 +21,12 @@
             z = newz/r;
         }
         
+        console.log("End of makeCircle().")
         return m;
     }
     
     function circle(args) {
+        console.log("Start of circle().")
         if (!(this instanceof circle)) return new circle(args);
         args = args || {};
         if (args.canvas !== undefined) {
@@ -36,6 +39,8 @@
             this.canvas.__activate();
         }
         
+        console.log("Middle 1 of circle().")
+        
         var R = args.radius || 1; delete args.radius;
         args.pos = args.pos || vec(0,0,0);
         args.normal = vec(1,0,0);
@@ -46,6 +51,8 @@
         args.shininess = args.shininess || 1;
         args.emissive = args.emissive || 0;
         
+        console.log("Middle 2 of circle().")
+
         var m = makeCircle(args);
         var v = [];
         for (var i=0; i<m.pos.length; i+=1) {
@@ -60,9 +67,11 @@
             t.push( triangle({ v0: v[m.index[i]], v1: v[m.index[i+1]], v2: v[m.index[i+2]] }) );
         }
         
+        console.log("Middle 3 of circle().")
+
         var circ = compound( t, { axis: args.axis, up: args.up } );
-        console.log(circ);
         circ.pos = args.pos;
+        console.log("End of circle().")
         return circ;
     }
     
