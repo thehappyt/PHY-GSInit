@@ -1,4 +1,4 @@
-;(function() {
+;(function () {
     "use strict";
 
     function makeCircle() {
@@ -77,4 +77,4 @@
     
     var exports = { circle: circle }
     Export(exports)
-}());
+}) ();
