@@ -1,6 +1,28 @@
-;(function () { 
+;(function() {
     "use strict";
 
+    function makeCircle() {
+        var N = 50; //number of triangles for circle
+        var dtheta = 2*pi/N;
+        var sind = sin(dtheta), cosd = cos(dtheta);
+        var y=0, z=-1, r=1;
+        var newy, newz;
+        
+        var m = { pos: [], index: [] };
+        m.pos.push( vec(0, 0, 0) );
+        for (var i=1; i<1+N; i++) {
+            m.pos.push( vec(0,y,z) );
+            m.index.push( 0,i,(i%N)+1 );
+            newy = y*cosd + z*sind;
+            newz = z*cosd - y*sind;
+            r = sqrt(newy*newy + newz*newz);
+            y = newy/r;
+            z = newz/r;
+        }
+        
+        return m;
+    }
+    
     function circle(args) {
         if (!(this instanceof circle)) return new circle(args);
         args = args || {};
@@ -24,49 +46,22 @@
         args.shininess = args.shininess || 1;
         args.emissive = args.emissive || 0;
         
-        function makeCircle() {
-            var N = 50; //number of triangles for circle
-            var dtheta = 2*pi/N;
-            var sind = sin(dtheta), cosd = cos(dtheta);
-            var y=0, z=-1;
-            var newy, newz;
-            
-            var m = { pos: [], index: [] };
-            m.pos.push( vec(0, 0, 0) );
-            var k = 2*N;
-            for (var i=1; i<1+2*N; i+=2) {
-                m.pos.push( vec(0,y,z) );
-                m.index.push( 0,i,(i+2)%k, 0,((i+2)%k)+1,i+1 );
-                newy = y*cosd + z*sind;
-                newz = z*cosd - y*sind;
-                y = newy;
-                z = newz;
-            }
-            
-            return m;
-        }
-        
         var m = makeCircle(args);
         var v = [];
-        v.push( vertex({    pos: R*m.pos[0],            normal: args.normal,
-                                color: args.color,          opacity: args.opacity,
-                                shininess: args.shininess,  emissive: args.emissive
-            }) );
-        for (var i=1; i<m.pos.length; i+=1) {
+        for (var i=0; i<m.pos.length; i+=1) {
             v.push( vertex({    pos: R*m.pos[i],            normal: args.normal,
                                 color: args.color,          opacity: args.opacity,
                                 shininess: args.shininess,  emissive: args.emissive
             }) );
-            v.push( vertex({    pos: R*m.pos[i],            normal: -args.normal,
-                                color: args.color,          opacity: args.opacity,
-                                shininess: args.shininess,  emissive: args.emissive
-            }) );
         }
+        
         var t = [];
         for (var i=0; i<m.index.length; i+=3) {
             t.push( triangle({ v0: v[m.index[i]], v1: v[m.index[i+1]], v2: v[m.index[i+2]] }) );
         }
+        
         var circ = compound( t, { axis: args.axis, up: args.up } );
+        console.log(circ);
         circ.pos = args.pos;
         return circ;
     }
@@ -79,7 +74,7 @@
             gsast[id] = exports[id]
         }
     }
-
+    
     var exports = { circle: circle }
     Export(exports)
-}) ();
+}());
