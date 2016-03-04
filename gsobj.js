@@ -1,24 +1,29 @@
 ;(function () {
     "use strict";
 
-    function makeCircle() {
+    function makeCircle(fill) {
         var N = 50; //number of triangles for circle
         var dtheta = 2*pi/N;
         var sind = sin(dtheta), cosd = cos(dtheta);
         var y=0, z=-1, r=1;
         var newy, newz;
         
-        var m = { pos: [], index: [] };
-        m.pos.push( vec(0, 0, 0) );
+        var m;
+        m = { pos: [] }
+        if (fill) {
+            m.index = [];
+            m.pos.push( vec(0, 0, 0) );
+        }
         for (var i=1; i<1+N; i++) {
             m.pos.push( vec(0,y,z) );
-            m.index.push( 0,i,(i%N)+1 );
+            if (fill) m.index.push( 0,i,(i%N)+1 );
             newy = y*cosd + z*sind;
             newz = z*cosd - y*sind;
             r = sqrt(newy*newy + newz*newz);
             y = newy/r;
             z = newz/r;
         }
+        if (!fill) m.pos.push(m.pos[0]);
         
         return m;
     }
@@ -47,15 +52,15 @@
         args.shininess = args.shininess || 1;
         args.emissive = args.emissive || 0;
         
-        var m = makeCircle(args);
+        var m = makeCircle(args.fill);
 
         if (args.fill) {
             var v = [];
             for (var i=0; i<m.pos.length; i++) {
-                var mi = m.pos[i];
-                v.push( vertex({    pos: vec(R*mi.x, R*mi.y, R*mi.z),   normal: vec(1,0,0),
-                                    color: args.color,                  opacity: args.opacity,
-                                    shininess: args.shininess,          emissive: args.emissive
+                //vec(R*mi.x, R*mi.y, R*mi.z),
+                v.push( vertex({    pos: m.pos[i].multiply(R),  normal: vec(1,0,0),
+                                    color: args.color,          opacity: args.opacity,
+                                    shininess: args.shininess,  emissive: args.emissive
                 }) );
             }
             
@@ -66,9 +71,8 @@
             
             return compound( t, { pos: args.pos, axis: args.axis, up: args.up } );
         } else {
-            var p = m.pos.slice(1);
-            for (var i=0; i<p.length; i++) { p[i] = vec(R*p[i].x,R*p[i].y,R*p[i].z)}
-            p.push(p[0]);
+            var p = m.pos;
+            for (var i=0; i<p.length; i++) { p[i] = p[i].multiply(R); }
             return curve({radius: 0.02*R, origin: args.pos, pos=p, axis=args.axis, up: args.up,
                         color: args.color, opacity: args.opacity, shininess: args.shininess, 
                         emissive: args.emissive })
