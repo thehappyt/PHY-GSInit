@@ -8,8 +8,6 @@
         var y=0, z=-1, r=1;
         var newy, newz;
         
-        console.log("fill = ", fill);
-        
         var m;
         m = { pos: [] }
         if (fill) {
@@ -26,8 +24,7 @@
             z = newz/r;
         }
         if (!fill) m.pos.push(m.pos[0]);
-        
-        console.log(m);
+
         return m;
     }
     
@@ -44,13 +41,11 @@
             this.canvas.__activate();
         }
         
-        var R = args.radius || 1; delete args.radius;
-        console.log("args.fill = ",args.fill);
         args.fill = args.fill || false;
+        var R = args.radius || 1; delete args.radius;
         args.pos = args.pos || vec(0,0,0);
         args.axis = args.axis || vec(1,0,0);
         args.up = args.up || vec(0,1,0);
-        //args.normal = vec(1,0,0);
         args.color = args.color || vec(1,1,1);
         args.opacity = args.opacity || 1;
         args.shininess = args.shininess || 1;
@@ -61,7 +56,6 @@
         if (args.fill) {
             var v = [];
             for (var i=0; i<m.pos.length; i++) {
-                //vec(R*mi.x, R*mi.y, R*mi.z),
                 v.push( vertex({    pos: m.pos[i].multiply(R),  normal: vec(1,0,0),
                                     color: args.color,          opacity: args.opacity,
                                     shininess: args.shininess,  emissive: args.emissive
@@ -77,9 +71,9 @@
         } else {
             var p = m.pos;
             for (var i=0; i<p.length; i++) { p[i] = p[i].multiply(R); }
-            return curve({radius: 0.02*R, origin: args.pos, pos: p, axis: args.axis, up: args.up,
-                        color: args.color, opacity: args.opacity, shininess: args.shininess, 
-                        emissive: args.emissive })
+            var curv = curve({pos: p, color: args.color, opacity: args.opacity, shininess: args.shininess, emissive: args.emissive })
+            curv.origin=args.pos; curv.axis=args.axis; curv.up=args.up;     //radius: 0.02*R, 
+            return curv;
         }
     }
     
