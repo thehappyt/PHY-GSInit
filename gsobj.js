@@ -8,6 +8,8 @@
         var y=0, z=-1, r=1;
         var newy, newz;
         
+        console.log("fill = ", fill);
+        
         var m;
         m = { pos: [] }
         if (fill) {
@@ -54,7 +56,6 @@
         args.shininess = args.shininess || 1;
         args.emissive = args.emissive || 0;
         
-        console.log(fill);
         var m = makeCircle(args.fill);
 
         if (args.fill) {
