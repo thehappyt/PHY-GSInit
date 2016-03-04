@@ -56,9 +56,10 @@
         var m = makeCircle(args);
         var v = [];
         for (var i=0; i<m.pos.length; i+=1) {
-            v.push( vertex({    pos: R*m.pos[i],            normal: args.normal,
-                                color: args.color,          opacity: args.opacity,
-                                shininess: args.shininess,  emissive: args.emissive
+            var mi = m.pos[i];
+            v.push( vertex({    pos: vec(R*mi.x, R*mi.y, R*mi.z),   normal: args.normal,
+                                color: args.color,                  opacity: args.opacity,
+                                shininess: args.shininess,          emissive: args.emissive
             }) );
         }
         
