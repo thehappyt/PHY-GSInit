@@ -25,6 +25,7 @@
         }
         if (!fill) m.pos.push(m.pos[0]);
         
+        console.log(m);
         return m;
     }
     
@@ -52,6 +53,7 @@
         args.shininess = args.shininess || 1;
         args.emissive = args.emissive || 0;
         
+        console.log(fill);
         var m = makeCircle(args.fill);
 
         if (args.fill) {
