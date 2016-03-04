@@ -46,7 +46,7 @@
         
         var R = args.radius || 1; delete args.radius;
         console.log("args.fill = ",args.fill);
-        args.fill = args.fill || true;
+        args.fill = args.fill || false;
         args.pos = args.pos || vec(0,0,0);
         args.axis = args.axis || vec(1,0,0);
         args.up = args.up || vec(0,1,0);
