@@ -50,6 +50,7 @@
         args.opacity = args.opacity || 1;
         args.shininess = args.shininess || 1;
         args.emissive = args.emissive || 0;
+        args.thickness = args.thickness || 0.005*R;
         
         var m = makeCircle(args.fill);
 
@@ -72,7 +73,7 @@
             var p = m.pos;
             for (var i=0; i<p.length; i++) { p[i] = p[i].multiply(R); }
             var curv = curve({pos: p, color: args.color, opacity: args.opacity, shininess: args.shininess, emissive: args.emissive })
-            curv.origin=args.pos; curv.axis=args.axis; curv.up=args.up; curv.radius=0.005*R;
+            curv.origin=args.pos; curv.axis=args.axis; curv.up=args.up; curv.radius=args.thickness;
             return curv;
         }
     }
