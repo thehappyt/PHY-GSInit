@@ -26,7 +26,7 @@
             $(this.canvas.__overlay_element).css({border: '1px solid #AAA'});
             
             print('', {end:''});
-            print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6}); //, pos:"right"
+            print_options({width:Math.max(Math.min(wide - high,400),200), height:high+6}); //, pos:"right"
             this.canvas.wrapper.css({float:"left"});
         }
         
