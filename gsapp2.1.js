@@ -21,12 +21,13 @@
             this.canvas.caption = cptn;
             if (mbar) this.canvas.menubar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper).addClass("gsmenubar");
             if (ibar) this.canvas.iconbar = $("<div/>").css("white-space","pre").insertBefore(this.canvas.wrapper).addClass("gsiconbar");
-            this.canvas.wrapper.css({margin: '4px'})
-            $(this.canvas.__canvas_element).css({border: '1px solid #AAA'})
-            $(this.canvas.__overlay_element).css({border: '1px solid #AAA'})
+            this.canvas.wrapper.css({margin: '4px'});
+            $(this.canvas.__canvas_element).css({border: '1px solid #AAA'});
+            $(this.canvas.__overlay_element).css({border: '1px solid #AAA'});
             
-            print('', {end:''})
-            print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6, pos:"right"})
+            print('', {end:''});
+            print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6}); //, pos:"right"
+            this.canvas.container.css({float:"left"});
         }
         
         if (options.mbar) {
