@@ -27,7 +27,7 @@
             
             print('', {end:''});
             print_options({width:Math.max(Math.min(wide - high,400),200), height:high+48-6}); //, pos:"right"
-            this.canvas.container.css({float:"left"});
+            this.canvas.wrapper.css({float:"left"});
         }
         
         if (options.mbar) {
