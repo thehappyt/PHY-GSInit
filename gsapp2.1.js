@@ -9,7 +9,10 @@
         options.mbar = !!options.mbar;
         options.ibar = !!options.ibar;
 
-        this.canvas = canvas({ resizable:false })
+        this.canvaswrap = $("<div/>");
+        if (!this.canvas) this.canvas = canvas({ resizable:false });
+        this.canvaswrap.insertBefore(this.canvas.title_anchor);
+        this.canvaswrap.append(this.canvas.title_anchor).append(this.canvas.wrapper).append(this.canvas.caption_anchor);
         this.appst = function(ttl, cptn, mbar, ibar) {                              // SETUP APPLICATION STRUCTURE
             var high = Number(window.innerHeight) - 57 - 24*(mbar) - 21*(ibar)      // 36 for status bar, 21 for title
             var wide = Number(window.innerWidth) - 20                               // 20 for good measure
